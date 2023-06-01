@@ -17,11 +17,21 @@ class Formulaire {
             $this->name = $name;
         }
     }
+    public function setBouton($name){
+        $this->name = $name;
+    }
 
     public function getChamp() {
         if( !empty($this->type) && !empty($this->name)) {
             $champ = '<input type="'.$this->type.'" name="'.$this->name.'" placeholder="' .ucfirst($this->name).'">';
             return $champ;
+        }
+    }
+    //Methode de visibilité public appeler getBouton
+    public function getBouton(){
+        if ( !empty($this->name)) {
+            $bouton = '<input type="submit" name="'.$this->name.'" value="' .ucfirst($this->name).'">';
+            return $bouton;
         }
     }
 }
