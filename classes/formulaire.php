@@ -17,5 +17,12 @@ class Formulaire {
             $this->name = $name;
         }
     }
+
+    public function getChamp() {
+        if( !empty($this->type) && !empty($this->name)) {
+            $champ = '<input type="'.$this->type.'" name="'.$this->name.'" placeholder="' .ucfirst($this->name).'">';
+            return $champ;
+        }
+    }
 }
 
