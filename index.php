@@ -30,5 +30,20 @@ include("classes/formulaire.php");
     echo $bouton->getBouton();
     echo Formulaire::FIN_FORMULAIRE;
     ?>
+    <?php 
+    if(isset($_POST['valider'])) {
+        $nom = $_POST['nom'];
+        $age = $_POST['age'];
+        $email = $_POST['email'];
+
+        if(empty($nom) || empty($age) || empty($email)) {
+            echo '<p>Vous devez remplir le formulaire</p>';
+        } else {
+            echo 'Nom: '.$nom. '<br>';
+            echo 'Age: '.$age. '<br>';
+            echo 'Email: '.$email;
+        }
+    }
+    ?>
 </body>
 </html>
